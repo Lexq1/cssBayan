@@ -1,0 +1,156 @@
+@font-face {
+ font-family: "FontAwesom";
+ src: url("/fonts/fa-regular-400.woff2") format("woff2");
+}
+
+html{
+	font-size: 10px;
+}
+
+body{
+	font-size: 3rem;
+}
+
+.fa{
+	text-align: right;
+}
+
+.wrap-mem{
+	border: 1px solid green;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.mem{
+	appearance: none;
+	width: 0;
+	height: 0;
+	position: absolute;
+}
+
+.mem:checked~ .title-accordion{
+	background: #044A04FF;
+	border-radius: 8px;
+	color: #fff;
+}
+
+.mem:checked~ .mem-img{
+	display: block;
+}
+
+.accordion{
+	margin-bottom: 450px;
+}
+
+h1,.accordion{
+	padding: 0 calc(50% - 376px);
+}
+
+.title-accordion{
+	display: block;
+	padding: 10px;
+	color: #000;
+	transition: all .7s;
+	position: relative;
+}
+
+.title-accordion::after{
+	content: "";
+	display: none;
+	border-style: solid;
+	border-width: 0px 5px 8px 5px;
+	border-color: transparent transparent #fff transparent;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+}
+
+
+
+.title-accordion::after{
+	display: block;
+}
+
+h1{
+	color: green;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.mem-img{
+	display: none;
+	max-width: 411px;
+	margin: 0 auto;
+	transition: all .7s;
+}
+
+
+
+@media (min-width: 820px) and (max-width: 1920px) {
+	
+	.wrap-mem:hover .title-accordion{
+		color: #fff;
+		
+	}
+
+	.mem:hover~ .mem-img{
+		display: block;
+	}
+
+	.mem:hover~ .title-accordion{
+		background: #044A04FF;
+		border-radius: 8px;
+	}
+
+	.mem:hover~.title-accordion::after{
+		display: block;
+		transform: rotate(180deg);
+	}
+
+
+}
+
+@media (max-width: 820px){
+	body{
+		font-size: 2.5rem;
+	}
+
+	.mem-img{
+		max-width: 311px;
+	}
+
+	h1,.accordion{
+		padding: 0 calc(50% - 258px);
+	}
+}
+
+@media (max-width: 536px){
+	h1,.accordion{
+		padding: 0 10px;
+	}
+}
+
+
+@media (max-width: 336px){
+
+	body{
+	font-size: 1.6rem;
+	}
+
+	.accordion{
+		padding: 0 10px;
+	}
+
+	h1,.title-accordion{
+		text-align: center;
+	}
+
+	.mem-img{
+		width: 100%;
+	}
+
+	.accordion{
+		padding: 0 calc(50% - 158px);
+	}
+}
